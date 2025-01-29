@@ -61,13 +61,13 @@ const CallToActionSection = () => {
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: subHeadingRef.current,
-          start: "top 95%", // Trigger when 80% of the element is in view
-          end: "bottom 10%", // End when the bottom of the element is 20% from the bottom
-          scrub: true, // Enable scrub for smooth animation
-          once: true, // Trigger animation only once
-        },
+        // scrollTrigger: {
+        //   trigger: subHeadingRef.current,
+        //   start: "top 95%", // Trigger when 80% of the element is in view
+        //   end: "bottom 10%", // End when the bottom of the element is 20% from the bottom
+        //   scrub: true, // Enable scrub for smooth animation
+        //   once: true, // Trigger animation only once
+        // },
       }
     );
 
@@ -80,13 +80,13 @@ const CallToActionSection = () => {
         duration: 1,
         ease: "power2.out",
         delay: 0.2,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 95%",
-          end: "bottom 10%",
-          scrub: true,
-          once: true,
-        },
+        // scrollTrigger: {
+        //   trigger: headingRef.current,
+        //   start: "top 95%",
+        //   end: "bottom 10%",
+        //   scrub: true,
+        //   once: true,
+        // },
       }
     );
 
@@ -99,13 +99,13 @@ const CallToActionSection = () => {
         duration: 1.5,
         ease: "power2.out",
         delay: 0.3,
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: "top 95%",
-          end: "bottom 10%",
-          scrub: true,
-          once: true,
-        },
+        // scrollTrigger: {
+        //   trigger: paragraphRef.current,
+        //   start: "top 95%",
+        //   end: "bottom 10%",
+        //   scrub: true,
+        //   once: true,
+        // },
       }
     );
 
@@ -118,13 +118,13 @@ const CallToActionSection = () => {
         duration: 1.5,
         ease: "power2.out",
         delay: 0.4,
-        scrollTrigger: {
-          trigger: buttonRef.current,
-          start: "top 95%",
-          end: "bottom 5%",
-          scrub: true,
-          once: true,
-        },
+        // scrollTrigger: {
+        //   trigger: buttonRef.current,
+        //   start: "top 95%",
+        //   end: "bottom 5%",
+        //   scrub: true,
+        //   once: true,
+        // },
       }
     );
   }, []);

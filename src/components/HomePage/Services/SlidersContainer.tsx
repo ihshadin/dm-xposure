@@ -5,13 +5,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination, EffectCoverflow } from "swiper/modules";
 import slide1 from "@/assets/images/png/slide-1.jpg";
 import SliderCard from "./SliderCard";
+import { PaginationOptions } from "swiper/types";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "@/styles/service.css";
-import { PaginationOptions } from "swiper/types";
 
 const data = [
   {
@@ -55,32 +55,36 @@ const SlidersContainer = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       {/* Active pagination */}
-      <div className="text-7xl font-semibold">
+      <div className="text-7xl font-semibold transition-all duration-500">
         {formatSlideNumber(activeSlide)}
       </div>
       <Swiper
         direction={"vertical"}
-        slidesPerView={1}
-        spaceBetween={30}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        spaceBetween={200}
         mousewheel={true}
+        // loop={true}
+        freeMode={true}
+        speed={1000}
         pagination={pagination as PaginationOptions}
         effect={"coverflow"}
         coverflowEffect={{
-          rotate: 50,
+          rotate: 0,
           stretch: 0,
           depth: 100,
-          modifier: 1,
-          slideShadows: true,
+          modifier: 2,
+          slideShadows: false,
         }}
         modules={[Mousewheel, Pagination, EffectCoverflow]}
         onSlideChange={handleSlideChange}
-        className="service-swiper h-screen"
+        className="service-swiper h-screen w-full"
       >
         {data.map((service, index) => (
           <SwiperSlide key={index} className="!h-auto">
-            <div className="flex items-center gap-14">
-              <SliderCard service={service} />
-            </div>
+            {/* <div className="flex items-center gap-14"> */}
+            <SliderCard service={service} />
+            {/* </div> */}
           </SwiperSlide>
         ))}
       </Swiper>

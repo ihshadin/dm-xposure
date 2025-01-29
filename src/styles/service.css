@@ -1,3 +1,9 @@
 /* .service-swiper .swiper-pagination {
   right: -100px;
 } */
+.service-swiper.swiper-3d .swiper-slide {
+  filter: blur(3px);
+}
+.service-swiper.swiper-3d .swiper-slide.swiper-slide-active {
+  filter: blur(0);
+}

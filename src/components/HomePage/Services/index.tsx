@@ -3,13 +3,13 @@ import SlidersContainer from "./SlidersContainer";
 
 const ServicesSection = () => {
   return (
-    <section className="bg-primary text-white py-24">
+    <section className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-2">
-        <div>
+        {/* <div>
           <h2 className="text-3xl lg:text-5xl font-extrabold text-center text-white">
             Our Services
           </h2>
-        </div>
+        </div> */}
         <div>
           <SlidersContainer />
         </div>
