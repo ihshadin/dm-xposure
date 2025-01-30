@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination, EffectCoverflow } from "swiper/modules";
 import slide1 from "@/assets/images/png/slide-1.jpg";
@@ -33,6 +35,9 @@ const data = [
 
 const SlidersContainer = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isSectionInView, setIsSectionInView] = useState(false);
+  const swiperRef = useRef<any>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Format slide number to always show two digits
   const formatSlideNumber = (number: number) => {
@@ -52,19 +57,56 @@ const SlidersContainer = () => {
     },
   };
 
+  // IntersectionObserver to detect when the section is fully in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsSectionInView(true);
+            if (swiperRef.current) {
+              swiperRef.current.mousewheel.enable(); // Enable swiper mousewheel
+            }
+          } else {
+            setIsSectionInView(false);
+            if (swiperRef.current) {
+              swiperRef.current.mousewheel.disable(); // Disable swiper mousewheel
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.9, // Trigger when the section is fully in view
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div ref={sectionRef} className="flex justify-center items-center relative">
       {/* Active pagination */}
-      <div className="text-7xl font-semibold transition-all duration-500">
+      <div className="text-xl md:text-7xl font-semibold absolute md:static top-[70px] left-0 z-10 transition-all duration-500">
         {formatSlideNumber(activeSlide)}
       </div>
       <Swiper
-        direction={"vertical"}
+        ref={swiperRef}
+        direction="vertical"
         centeredSlides={true}
         slidesPerView={"auto"}
-        spaceBetween={200}
-        mousewheel={true}
-        // loop={true}
+        spaceBetween={50}
+        mousewheel={{
+          forceToAxis: true,
+          releaseOnEdges: true, // Allow scrolling to next section when reaching the end
+        }}
         freeMode={true}
         speed={1000}
         pagination={pagination as PaginationOptions}
@@ -76,15 +118,22 @@ const SlidersContainer = () => {
           modifier: 2,
           slideShadows: false,
         }}
+        breakpoints={{
+          1024: {
+            spaceBetween: 200,
+          },
+        }}
         modules={[Mousewheel, Pagination, EffectCoverflow]}
         onSlideChange={handleSlideChange}
-        className="service-swiper h-screen w-full"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+          swiper.mousewheel.disable(); // Disable mousewheel initially
+        }}
+        className="service-swiper h-[400px] md:h-screen w-full"
       >
         {data.map((service, index) => (
           <SwiperSlide key={index} className="!h-auto">
-            {/* <div className="flex items-center gap-14"> */}
             <SliderCard service={service} />
-            {/* </div> */}
           </SwiperSlide>
         ))}
       </Swiper>

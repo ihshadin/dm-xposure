@@ -1,14 +1,15 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import downScrollImg from "@/assets/images/png/down-arrow.png";
 import Link from "next/link";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const BottomArea = () => {
   const scrollBtn = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     // GSAP animations
     gsap.fromTo(
       scrollBtn.current,
@@ -20,7 +21,7 @@ const BottomArea = () => {
       scrollBtn.current,
       { y: 0 },
       {
-        y: 100,
+        y: 50,
         duration: 2,
         scrollTrigger: {
           trigger: scrollBtn.current,
@@ -35,7 +36,10 @@ const BottomArea = () => {
 
   return (
     <>
-      <div className="shrink-0 text-center pb-10 opacity-0" ref={scrollBtn}>
+      <div
+        className="shrink-0 text-center pb-10 opacity-0 mt-6 lg:mt-0"
+        ref={scrollBtn}
+      >
         <Link className="inline-block" href={"/#call_to_action"}>
           <Image
             className="w-20 lg:w-[112px]"

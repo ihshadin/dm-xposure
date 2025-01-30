@@ -1,17 +1,18 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import part1 from "@/assets/images/png/logo-part-1.png";
 import part2 from "@/assets/images/png/logo-part-2.png";
 import part3 from "@/assets/images/png/logo-part-3.png";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const AnimateLogo = () => {
   const part1Ref = useRef(null);
   const part2Ref = useRef(null);
   const part3Ref = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     // GSAP animations
     gsap.fromTo(
       part1Ref.current,

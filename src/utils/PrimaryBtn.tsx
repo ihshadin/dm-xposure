@@ -28,16 +28,17 @@ const PrimaryBtn = ({ text, className, link }: TPrimaryBtn) => {
       href={link || "#"}
       style={{ "--btnDeg": `${btnDeg}deg` } as React.CSSProperties}
       onMouseMove={(e) => handleMouseMove(e)}
-      className={`primaryBtn pl-5 pr-2.5 py-2.5 rounded-full capitalize text-white inline-block border border-[#FFFFFF0A] bg-[#FFFFFF30] transition-all duration-300 relative group hover:bg-[#ffffff21] ${
+      className={`pl-5 pr-2.5 py-2.5 rounded-full capitalize text-white inline-block border border-[#FFFFFF0A] bg-[#FFFFFF30] transition-all duration-200 relative group hover:bg-secondary/80 hover:text-primary ${
         className ? className : ""
       }`}
     >
-      <i className="absolute inset-[-2px] flex rounded-full -z-10"></i>
-      <i className="absolute inset-[-2px] flex rounded-full blur-md -z-10"></i>
+      {/* <i className="absolute inset-[-2px] flex rounded-full -z-10"></i>
+      <i className="absolute inset-[-2px] flex rounded-full blur-md -z-10"></i> */}
       <span className="flex items-center gap-2.5 transition-all">
         {text}
-        <span className="size-6 flex items-center justify-center bg-[#FFFFFF26] border border-[#ffffff21] rounded-full group-hover:translate-x-[40px] transition-all duration-500">
-          <GoArrowRight className="text-secondary text-[12px]" />
+        {/* <span className="size-6 flex items-center justify-center bg-[#FFFFFF26] border border-[#ffffff21] rounded-full group-hover:translate-x-[40px] transition-all duration-500"> */}
+        <span className="size-6 flex items-center justify-center bg-[#FFFFFF26] group-hover:bg-primary/10 border border-[#ffffff21] rounded-full transition-all duration-300">
+          <GoArrowRight className="text-secondary group-hover:text-primary text-[12px]" />
         </span>
       </span>
       {/* <div className="animate-rotate absolute inset-0 h-full w-full rounded-full bg-[conic-gradient(#0ea5e9_20deg,transparent_120deg)]"></div> */}

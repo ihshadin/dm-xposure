@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import PrimaryBtn from "@/utils/PrimaryBtn";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const ContentArea = () => {
   const headingRef = useRef(null);
@@ -9,7 +10,7 @@ const ContentArea = () => {
   const paragraphRef = useRef(null);
   const buttonRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     // GSAP animations
     gsap.fromTo(
       headingRef.current,
@@ -51,7 +52,7 @@ const ContentArea = () => {
         landscape to build a lasting, impactful online presence. Start your
         journey with us today and see the difference.
       </p>
-      <div ref={buttonRef} className="mt-10">
+      <div ref={buttonRef} className="mt-10 text-center md:text-left">
         <PrimaryBtn text="Get Started" link="/about" />
       </div>
     </div>

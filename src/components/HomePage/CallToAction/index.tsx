@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import PrimaryBtn from "@/utils/PrimaryBtn";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from "@gsap/react";
 
 const CallToActionSection = () => {
   const sectionRef = useRef(null);
@@ -51,8 +49,21 @@ const CallToActionSection = () => {
   //     return () => observer.disconnect(); // Cleanup observer on unmount
   //   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     // GSAP animations with ScrollTrigger for each element
+    // gsap.to(sectionRef.current, {
+    //   // y: 0,
+    //   scrollTrigger: {
+    //     trigger: sectionRef.current, // Pin when the section hits the top
+    //     start: "top top", // Start pinning when section hits top
+    //     end: "+=3300", // Unpin when the next section comes into view (adjust as needed)
+    //     pin: true, // Pin the section
+    //     scrub: 1, // Make the pin smooth when scrolling
+    //     pinSpacing: false, // Optional: To prevent extra spacing when unpinned
+    //     anticipatePin: 1,
+    //   },
+    // });
+
     gsap.fromTo(
       subHeadingRef.current,
       { y: 50, opacity: 0 },
@@ -61,13 +72,13 @@ const CallToActionSection = () => {
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        // scrollTrigger: {
-        //   trigger: subHeadingRef.current,
-        //   start: "top 95%", // Trigger when 80% of the element is in view
-        //   end: "bottom 10%", // End when the bottom of the element is 20% from the bottom
-        //   scrub: true, // Enable scrub for smooth animation
-        //   once: true, // Trigger animation only once
-        // },
+        scrollTrigger: {
+          trigger: subHeadingRef.current,
+          start: "top 90%",
+          end: "bottom 10%",
+          scrub: true,
+          // once: true,
+        },
       }
     );
 
@@ -80,13 +91,13 @@ const CallToActionSection = () => {
         duration: 1,
         ease: "power2.out",
         delay: 0.2,
-        // scrollTrigger: {
-        //   trigger: headingRef.current,
-        //   start: "top 95%",
-        //   end: "bottom 10%",
-        //   scrub: true,
-        //   once: true,
-        // },
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 95%",
+          end: "bottom 10%",
+          scrub: true,
+          // once: true,
+        },
       }
     );
 
@@ -99,13 +110,13 @@ const CallToActionSection = () => {
         duration: 1.5,
         ease: "power2.out",
         delay: 0.3,
-        // scrollTrigger: {
-        //   trigger: paragraphRef.current,
-        //   start: "top 95%",
-        //   end: "bottom 10%",
-        //   scrub: true,
-        //   once: true,
-        // },
+        scrollTrigger: {
+          trigger: paragraphRef.current,
+          start: "top 95%",
+          end: "bottom 10%",
+          scrub: true,
+          // once: true,
+        },
       }
     );
 
@@ -118,13 +129,13 @@ const CallToActionSection = () => {
         duration: 1.5,
         ease: "power2.out",
         delay: 0.4,
-        // scrollTrigger: {
-        //   trigger: buttonRef.current,
-        //   start: "top 95%",
-        //   end: "bottom 5%",
-        //   scrub: true,
-        //   once: true,
-        // },
+        scrollTrigger: {
+          trigger: buttonRef.current,
+          start: "top 90%",
+          end: "bottom 10%",
+          scrub: true,
+          // once: true,
+        },
       }
     );
   }, []);
@@ -141,7 +152,7 @@ const CallToActionSection = () => {
           </span>
           <h1
             ref={headingRef}
-            className="font-extrabold text-[32px] md:text-[40px] mt-1 md:mt-2 mb-2 md:mb-5 text-white text-center"
+            className="font-extrabold text-[29px] md:text-[40px] mt-1 md:mt-2 mb-2 md:mb-5 text-white text-center"
           >
             Solutions for Your Digital Needs
           </h1>

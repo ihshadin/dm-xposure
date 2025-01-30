@@ -1,15 +1,16 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 // import animateLogo from "@/assets/gif/hero-right-animation.gif";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import gsap from "gsap";
 import AnimateLogo from "./AnimateLogo";
+import { useGSAP } from "@gsap/react";
 
 const RightArea = () => {
   const socialRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     // GSAP animations
     gsap.fromTo(
       socialRef.current,
