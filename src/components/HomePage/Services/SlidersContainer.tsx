@@ -49,7 +49,7 @@ const SlidersContainer = () => {
   };
 
   const pagination = {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-services",
     clickable: true,
     type: "bullets",
     renderBullet: function (index: any, className: any) {
@@ -97,6 +97,7 @@ const SlidersContainer = () => {
       <div className="text-xl md:text-7xl font-semibold absolute md:static top-[70px] left-0 z-10 transition-all duration-500">
         {formatSlideNumber(activeSlide)}
       </div>
+
       <Swiper
         ref={swiperRef}
         direction="vertical"
@@ -107,8 +108,7 @@ const SlidersContainer = () => {
           forceToAxis: true,
           releaseOnEdges: true, // Allow scrolling to next section when reaching the end
         }}
-        freeMode={true}
-        speed={1000}
+        speed={800}
         pagination={pagination as PaginationOptions}
         effect={"coverflow"}
         coverflowEffect={{
@@ -129,7 +129,7 @@ const SlidersContainer = () => {
           swiperRef.current = swiper;
           swiper.mousewheel.disable(); // Disable mousewheel initially
         }}
-        className="service-swiper h-[400px] md:h-screen w-full"
+        className="service-swiper h-[400px] md:h-screen !w-full grow"
       >
         {data.map((service, index) => (
           <SwiperSlide key={index} className="!h-auto">
@@ -139,7 +139,7 @@ const SlidersContainer = () => {
       </Swiper>
 
       {/* Pagination */}
-      <div className="swiper-pagination text-white !static *:!h-3 *:!w-3 *:!bg-secondary *:rounded-full"></div>
+      <div className="swiper-pagination-services text-white !static !w-3 flex flex-col gap-2 *:!h-3 *:!w-3 *:!bg-secondary *:rounded-full *:!m-0"></div>
     </div>
   );
 };

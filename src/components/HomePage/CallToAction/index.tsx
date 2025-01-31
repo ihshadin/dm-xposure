@@ -66,7 +66,7 @@ const CallToActionSection = () => {
 
     gsap.fromTo(
       subHeadingRef.current,
-      { y: 50, opacity: 0 },
+      { y: 70, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -84,7 +84,7 @@ const CallToActionSection = () => {
 
     gsap.fromTo(
       headingRef.current,
-      { y: 50, opacity: 0 },
+      { y: 70, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -103,7 +103,7 @@ const CallToActionSection = () => {
 
     gsap.fromTo(
       paragraphRef.current,
-      { y: 50, opacity: 0 },
+      { y: 70, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -122,7 +122,7 @@ const CallToActionSection = () => {
 
     gsap.fromTo(
       buttonRef.current,
-      { x: -100, opacity: 0 },
+      { x: -150, opacity: 0 },
       {
         x: 0,
         opacity: 1,
@@ -152,7 +152,7 @@ const CallToActionSection = () => {
           </span>
           <h1
             ref={headingRef}
-            className="font-extrabold text-[29px] md:text-[40px] mt-1 md:mt-2 mb-2 md:mb-5 text-white text-center"
+            className="font-extrabold text-[29px] md:text-[40px] mt-1 md:mt-2 mb-2 md:mb-3 text-white text-center"
           >
             Solutions for Your Digital Needs
           </h1>
