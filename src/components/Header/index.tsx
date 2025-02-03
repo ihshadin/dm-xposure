@@ -21,7 +21,7 @@ const Header = ({ className }: { className?: string }) => {
   return (
     <header
       // ref={header}
-      className={`w-full absolute left-0 top-8 z-50 animate-[slideDown_1.5s_ease-in-out] ${
+      className={`w-full absolute left-0 top-8 z-50 animate-[headerDown_1.5s_ease-in-out] ${
         className ? className : ""
       }`}
     >

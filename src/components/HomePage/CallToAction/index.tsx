@@ -141,7 +141,7 @@ const CallToActionSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="call_to_action" className="bg-primary py-14">
+    <section ref={sectionRef} id="call_to_action" className="bg-primary py-8">
       <div className="max-w-[950px] mx-auto px-2">
         <div className="flex flex-col justify-center">
           <span

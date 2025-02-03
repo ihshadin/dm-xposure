@@ -12,22 +12,23 @@ const RightArea = () => {
 
   useGSAP(() => {
     // GSAP animations
-    gsap.fromTo(
-      socialRef.current,
-      { x: 100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 2, ease: "power2.out" }
-    );
+    gsap.to(socialRef.current, {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+    });
   }, []);
 
   return (
-    <div className="flex items-center">
-      <div className="grow flex justify-center">
+    <div className="flex items-center gap-20">
+      <div className="grow flex justify-end">
         <AnimateLogo />
       </div>
-      {/* <img className="w-full grow" src={animateLogo?.src} alt="Animated Logo" /> */}
+
       <div
         ref={socialRef}
-        className="shrink flex flex-col items-center gap-4 text-white/80"
+        className="shrink flex flex-col items-center gap-4 text-white/80 opacity-0 translate-x-14"
       >
         <span className="block w-0.5 h-20 rounded bg-white/80"></span>
         <div className="flex flex-col gap-7">

@@ -21,6 +21,10 @@ export default {
         "3d": "10px 10px 15px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.3)",
       },
       keyframes: {
+        headerDown: {
+          "0%": { transform: "translateY(-115px)" },
+          "100%": { transform: "translateY(0)" },
+        },
         slideDown: {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(0)" },
