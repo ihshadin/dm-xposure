@@ -21,17 +21,17 @@ const RightArea = () => {
   }, []);
 
   return (
-    <div className="flex items-center gap-20">
-      <div className="grow flex justify-end">
+    <div className="flex items-center gap-0 lg:gap-20">
+      <div className="grow flex justify-center md:justify-end">
         <AnimateLogo />
       </div>
 
       <div
         ref={socialRef}
-        className="shrink flex flex-col items-center gap-4 text-white/80 opacity-0 translate-x-14"
+        className="shrink flex flex-col items-center gap-3 lg:gap-4 text-white/80 opacity-0 translate-x-14"
       >
-        <span className="block w-0.5 h-20 rounded bg-white/80"></span>
-        <div className="flex flex-col gap-7">
+        <span className="block w-0.5 h-16 lg:h-20 rounded bg-white/80"></span>
+        <div className="flex flex-col gap-4 lg:gap-7">
           <Link href={`https://www.facebook.com`} target="_black">
             <FaFacebookF className="text-sm" />
           </Link>
@@ -42,7 +42,7 @@ const RightArea = () => {
             <FaXTwitter className="text-sm" />
           </Link>
         </div>
-        <span className="block w-0.5 h-20 rounded bg-white/80"></span>
+        <span className="block w-0.5 h-16 lg:h-20 rounded bg-white/80"></span>
       </div>
     </div>
   );

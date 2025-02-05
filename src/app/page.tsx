@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StoriesSection from "@/components/HomePage/Stories";
+import GradientBg from "@/components/HomePage/GradientBg/GradientBg";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 const HomePage = () => {
   return (
     <main>
+      <GradientBg />
       <HeroSection />
       <CallToActionSection />
       <ServicesSection />

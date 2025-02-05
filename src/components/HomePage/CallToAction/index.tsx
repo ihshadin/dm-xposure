@@ -64,85 +64,88 @@ const CallToActionSection = () => {
     //   },
     // });
 
-    gsap.fromTo(
-      subHeadingRef.current,
-      { y: 70, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: subHeadingRef.current,
-          start: "top 90%",
-          end: "bottom 10%",
-          scrub: true,
-          // once: true,
-        },
-      }
-    );
+    gsap.to(sectionRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 100%",
+        end: "top 40%",
+        scrub: true,
+      },
+    });
 
-    gsap.fromTo(
-      headingRef.current,
-      { y: 70, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 95%",
-          end: "bottom 10%",
-          scrub: true,
-          // once: true,
-        },
-      }
-    );
+    // gsap.to(subHeadingRef.current, {
+    //   scale: 1,
+    //   opacity: 1,
+    //   duration: 1,
+    //   ease: "power2.out",
+    //   scrollTrigger: {
+    //     trigger: subHeadingRef.current,
+    //     start: "top 90%",
+    //     end: "bottom 10%",
+    //     scrub: true,
+    //   },
+    // });
 
-    gsap.fromTo(
-      paragraphRef.current,
-      { y: 70, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        delay: 0.3,
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: "top 95%",
-          end: "bottom 10%",
-          scrub: true,
-          // once: true,
-        },
-      }
-    );
+    // gsap.to(headingRef.current, {
+    //   scale: 1,
+    //   opacity: 1,
+    //   duration: 1,
+    //   ease: "power2.out",
+    //   delay: 0.2,
+    //   scrollTrigger: {
+    //     trigger: headingRef.current,
+    //     start: "top 95%",
+    //     end: "bottom 10%",
+    //     scrub: true,
+    //   },
+    // });
 
-    gsap.fromTo(
-      buttonRef.current,
-      { x: -150, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        delay: 0.4,
-        scrollTrigger: {
-          trigger: buttonRef.current,
-          start: "top 90%",
-          end: "bottom 10%",
-          scrub: true,
-          // once: true,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   paragraphRef.current,
+    //   { y: 70, opacity: 0 },
+    //   {
+    //     y: 0,
+    //     opacity: 1,
+    //     duration: 1.5,
+    //     ease: "power2.out",
+    //     delay: 0.3,
+    //     scrollTrigger: {
+    //       trigger: paragraphRef.current,
+    //       start: "top 95%",
+    //       end: "bottom 10%",
+    //       scrub: true,
+    //       // once: true,
+    //     },
+    //   }
+    // );
+
+    gsap.to(buttonRef.current, {
+      x: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out",
+      delay: 0.4,
+      scrollTrigger: {
+        trigger: buttonRef.current,
+        start: "top 95%",
+        end: "top 40%",
+        scrub: true,
+        // once: true,
+      },
+    });
   }, []);
 
   return (
-    <section ref={sectionRef} id="call_to_action" className="bg-primary py-8">
-      <div className="max-w-[950px] mx-auto px-2">
+    <section
+      ref={sectionRef}
+      id="call_to_action"
+      className="py-6 opacity-0 scale-50"
+    >
+      <div className="max-w-[950px] mx-auto px-3">
         <div className="flex flex-col justify-center">
           <span
             ref={subHeadingRef}
@@ -152,7 +155,7 @@ const CallToActionSection = () => {
           </span>
           <h1
             ref={headingRef}
-            className="font-extrabold text-[29px] md:text-[40px] mt-1 md:mt-2 mb-2 md:mb-3 text-white text-center"
+            className="font-extrabold text-[29px] md:text-[40px] mb-1 md:mb-2 text-white text-center"
           >
             Solutions for Your Digital Needs
           </h1>
@@ -167,7 +170,10 @@ const CallToActionSection = () => {
             build a strong, lasting online presence. Let&apos;s collaborate to
             transform your vision into reality.
           </p>
-          <div ref={buttonRef} className="mt-10 text-center">
+          <div
+            ref={buttonRef}
+            className="mt-5 md:mt-8 text-center opacity-0 -translate-x-14"
+          >
             <PrimaryBtn text="Inquire More" link="/about" />
           </div>
         </div>

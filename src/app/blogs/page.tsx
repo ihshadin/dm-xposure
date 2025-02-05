@@ -2,16 +2,18 @@ import Breadcamp from "@/utils/Breadcamp";
 import React from "react";
 import BlogCard from "./BlogCard";
 import { TBlog } from "@/types/blog.type";
+import img1 from "@/assets/images/png/blog-1.jpg";
+import img2 from "@/assets/images/png/blog-2.jpg";
 
 const data = [
   {
     title: "Sunset Over the Mountains",
-    img: "https://images.pexels.com/photos/3805358/pexels-photo-3805358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img: img1.src,
     date: "2023-10-15",
   },
   {
     title: "Autumn Forest Pathway",
-    img: "https://images.pexels.com/photos/2214363/pexels-photo-2214363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img: img2.src,
     date: "2023-11-05",
   },
   {
@@ -54,8 +56,8 @@ const BlogsPage = () => {
   return (
     <>
       <Breadcamp title="All Blogs Posts" />
-      <section className="pb-14 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-2">
+      <section className="py-14 lg:py-24">
+        <div className="dm-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {data.map((blog: TBlog, index) => (
               <BlogCard key={index} blog={blog} />

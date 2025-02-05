@@ -25,7 +25,7 @@ const Header = ({ className }: { className?: string }) => {
         className ? className : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2">
+      <div className="dm-container">
         <div className="flex items-center bg-white/15 rounded-full px-6 lg:px-8 justify-between">
           <Link href="/" className="cursor-pointer py-5">
             <Image className="w-44 md:w-52" src={logoWhite} alt="Logo" />

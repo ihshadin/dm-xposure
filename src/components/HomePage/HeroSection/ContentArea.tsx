@@ -67,7 +67,7 @@ const ContentArea = () => {
       </p>
       <div
         ref={buttonRef}
-        className="mt-10 text-center md:text-left opacity-0 -translate-x-28"
+        className="mt-5 md:mt-10 text-center md:text-left opacity-0 -translate-x-28"
       >
         <PrimaryBtn text="Get Started" link="/about" />
       </div>

@@ -24,9 +24,9 @@ body {
   background: var(--background);
   overflow-x: hidden;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 a.primaryBtn i {
   background: linear-gradient(
     var(--btnDeg),
@@ -35,4 +35,12 @@ a.primaryBtn i {
     #001338,
     #ffd057
   );
+}
+.dm-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
 }

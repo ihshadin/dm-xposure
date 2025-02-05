@@ -49,7 +49,7 @@ const SolutionTools = () => {
           <Image
             key={index}
             src={partner.pic}
-            className="h-10 md:h-14 lg:h-20 w-auto object-cover mx-5 lg:mx-12"
+            className="h-8 md:h-10 lg:h-12 w-auto object-cover mx-7 lg:mx-14"
             alt="IMG"
           />
         ))}

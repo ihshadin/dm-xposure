@@ -21,18 +21,18 @@ const AnimateLogo = () => {
 
   return (
     <div className="relative text-center pl-14">
-      <div ref={part2Ref} className="w-[270px] scale-0">
+      <div ref={part2Ref} className="w-[180px] lg:w-[270px] scale-0">
         <Image className="w-full" src={part2} alt="Logo" />
       </div>
       <div
         ref={part1Ref}
-        className="w-[290px] scale-0 absolute left-1 top-[70px]"
+        className="w-[193px] lg:w-[290px] scale-0 absolute left-[25px] lg:left-1 top-[40px] lg:top-[70px]"
       >
         <Image className="w-full" src={part1} alt="Logo" />
       </div>
       <div
         ref={part3Ref}
-        className="w-[173px] scale-0 absolute left-[85px] bottom-[10px]"
+        className="w-[115px] lg:w-[173px] scale-0 absolute left-[78px] lg:left-[85px] bottom-[10px]"
       >
         <Image className="w-full" src={part3} alt="Logo" />
       </div>

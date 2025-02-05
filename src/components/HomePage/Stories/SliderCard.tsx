@@ -4,17 +4,15 @@ import Image from "next/image";
 
 const SliderCard = ({ service }: { service: TService }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-3 h-full w-full">
       <Image
-        className="rounded-3xl h-[180px] md:h-[300px] lg:h-[400px] w-full object-cover border-2 border-white/40"
+        className="border-2 border-white/40"
         src={service?.img}
         width={600}
         height={420}
         alt="image"
       />
-      <h3 className="text-base md:text-xl lg:text-[27px] mt-3 opacity-0 transition-all duration-300">
-        {service?.title}
-      </h3>
+      <h3 className="transition-all duration-300">{service?.title}</h3>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const BottomArea = () => {
   return (
     <>
       <div
-        className="opacity-0 mt-6 lg:mt-0 absolute left-1/2 -translate-x-1/2 bottom-6"
+        className="opacity-0 absolute left-1/2 -translate-x-1/2 bottom-3 hidden md:inline-block"
         ref={scrollBtn}
       >
         <Link className="inline-block" href={"/#call_to_action"}>
